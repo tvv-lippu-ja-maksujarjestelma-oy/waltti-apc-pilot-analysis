@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "waltti-apc-pilot-analysis"
+version = "0.1.0"
+description = "Analyze Waltti-APC pilot results."
+license = "EUPL-1.2"
+authors = ["haphut <haphut@mistmap.com>"]
+readme = "README.md"
+repository = "https://github.com/tvv-lippu-ja-maksujarjestelma-oy/waltti-apc-pilot-analysis"
+packages = [{include = "waltti_apc_pilot_analysis", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

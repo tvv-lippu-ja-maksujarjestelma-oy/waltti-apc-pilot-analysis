@@ -11,6 +11,7 @@ packages = [{include = "waltti_apc_pilot_analysis", from = "src"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 pulsar-client = "^3.1.0"
+polars = "^0.17.2"
 
 
 [tool.poetry.group.dev.dependencies]

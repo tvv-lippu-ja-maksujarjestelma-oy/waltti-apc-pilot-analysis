@@ -222,6 +222,21 @@ avro = ["fastavro (==0.24.0)"]
 functions = ["apache-bookkeeper-client (>=4.9.2)", "grpcio (>=1.8.2,<1.28)", "prometheus-client", "protobuf (>=3.6.1,<=3.20.3)", "ratelimit"]
 
 [[package]]
+name = "python-dotenv"
+version = "1.0.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "python-dotenv-1.0.0.tar.gz", hash = "sha256:a8df96034aae6d2d50a4ebe8216326c61c3eb64836776504fcca410e5937a3ba"},
+    {file = "python_dotenv-1.0.0-py3-none-any.whl", hash = "sha256:f5971a9226b701070a4bf2c38c89e5a3f0d64de8debda981d1db98583009122a"},
+]
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
 name = "ruff"
 version = "0.0.261"
 description = "An extremely fast Python linter, written in Rust."
@@ -275,4 +290,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "79da75cad487a67e32918f7175f2f2a6a386c21235fd440092e068fcfc2106b5"
+content-hash = "00aeb1173ca6d364c021ec3208583e6dd2e66b2db9f68e341fc30fed2dd262f5"

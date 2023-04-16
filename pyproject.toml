@@ -16,6 +16,7 @@ python-dotenv = "^1.0.0"
 gtfs-realtime-bindings = "^1.0.0"
 pyarrow = "^11.0.0"
 plotly = "^5.14.1"
+pandas = "^2.0.0"
 
 
 [tool.poetry.group.dev.dependencies]

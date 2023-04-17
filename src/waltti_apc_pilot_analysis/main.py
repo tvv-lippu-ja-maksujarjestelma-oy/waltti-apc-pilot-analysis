@@ -6,6 +6,7 @@ import os
 
 import dotenv
 
+from waltti_apc_pilot_analysis import analysis
 from waltti_apc_pilot_analysis import download
 
 
@@ -29,13 +30,12 @@ def read_configuration():
                 "gtfsrtvp_topic_list": json.loads(
                     os.environ["PULSAR_GTFSRTVP_TOPIC_JSON_ARRAY"]
                 ),
-                "gtfsrtvp_vehicle_id_list": json.loads(
-                    os.environ["PULSAR_GTFSRTVP_VEHICLE_ID_JSON_ARRAY"]
-                ),
                 "onboard_apc_topic": os.environ["PULSAR_ONBOARD_APC_TOPIC"],
             },
         },
+        "counting_system_map": json.loads(os.environ["COUNTING_SYSTEM_MAP"]),
         "data_root_path": os.environ["DATA_ROOT_PATH"],
+        "run_phases": json.loads(os.environ["RUN_PHASES_JSON_ARRAY"]),
     }
     return configuration
 
@@ -47,9 +47,15 @@ def main():
         level=logging.INFO,
     )
     configuration = read_configuration()
-    download.download_all(
-        configuration["data_root_path"], configuration["pulsar"]
-    )
+    if "download" in configuration["run_phases"]:
+        download.download_all(
+            configuration["data_root_path"], configuration["pulsar"]
+        )
+    if "analysis" in configuration["run_phases"]:
+        analysis.run_analysis(
+            configuration["data_root_path"],
+            configuration["counting_system_map"],
+        )
 
 
 if __name__ == "__main__":
